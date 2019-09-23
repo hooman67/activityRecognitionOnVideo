@@ -1,0 +1,42 @@
+{
+    "model" : {
+        "backend":              "Full Yolo",
+        "input_size":           640,
+        "anchors":              [0.31,0.81, 0.40,1.16, 0.41,0.91, 0.42,0.68, 0.50,1.42, 0.52,1.09, 0.63,1.72, 1.14,2.69, 10.64,2.53],
+        "max_box_per_image":    20,
+        "labels":               ["Dump", "Swing Empty", "Engage", "Swing Full", "Still"],
+
+		"h5_sequence_length":	60,
+		"last_sequence_length": 30,
+		"stride":				3,
+		"detector_weights_path":"/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/data/optical/teeth/backhoe/All/output/full_yolo_50_hsBb_valLoss-0.33.h5"
+    },
+
+    "train": {
+        "train_annot_folder":   "/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/data/optical/samans_activity/readyForJira",
+        "train_h5_folder":		"/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/data/optical/teeth_activity/temp",
+        "num_samples_in_h5":	8,
+        "train_times":          1,
+        "pretrained_weights":   "",
+        "batch_size":           2,
+        "learning_rate":        1e-4,
+        "nb_epochs":            200,
+        "warmup_epochs":        2,
+
+        "tensorboard_log_dir": "/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/data/optical/teeth_activity/temp/model",
+        "early_stop_patience": 100,
+        "early_stop_min_delta": 0.01,
+        "learning_rate_decay_factor": 0.5,
+        "learning_rate_decay_patience": 20,
+        "learning_rate_decay_min_lr": 1e-6,
+
+        "saved_weights_name":   "/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/yolo_v2_models/full_yolo",
+        "debug":                false
+    },
+
+    "valid": {
+        "valid_image_folder":   "",
+        "valid_annot_folder":   "",
+        "valid_times":          1
+    }
+}

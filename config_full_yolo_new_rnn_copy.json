@@ -1,0 +1,51 @@
+{
+    "model" : {
+        "backend":              "Full Yolo",
+        "input_size":           640,
+        "anchors":              [0.31,0.81, 0.40,1.16, 0.41,0.91, 0.42,0.68, 0.50,1.42, 0.52,1.09, 0.63,1.72, 0.96,1.72, 1.14,2.69, 10.64,2.53],
+        "max_box_per_image":    20,        
+        "labels":               ["Tooth", "Toothline", "BucketBB", "MatInside", "WearArea"],
+        "activity_labels":      ["Swinging", "Dumping", "Background", "Digging", "Idle"],
+
+		"h5_sequence_length":	60,
+		"last_sequence_length": 30,
+		"stride":				3,
+		"detector_weights_path":"/home/cheng/Desktop/repos/keras-yolo2/snapshots/latest_all_shovel_full_yolo/full_yolo_34.h5"
+    },
+
+    "train": {
+        "train_image_folder":   "/home/cheng/Desktop/data/optical/teeth/Train/image/",
+        "train_annot_folder":   "/home/cheng/Desktop/data/optical/teeth/Train/labels/",     
+	"train_h5_folder":		"/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/data/optical/teeth_activity/hydraulic/h5s",
+        "train_times":          1,
+        "pretrained_weights":   "full_yolo_rnn.h5",
+        "batch_size":           2,
+	"num_samples_in_h5":	8,
+        "learning_rate":        1e-4,
+        "nb_epochs":            50,
+        "warmup_epochs":        2,
+
+        "object_scale":         5.0,
+        "no_object_scale":      1.0,
+        "coord_scale":          1.0,
+        "class_scale":          1.0,
+        "activity_loss_weight": 1.0,
+
+        "saved_weights_name":   "/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/yolo_v2_models/full_yolo",
+        "debug":                false,
+	"is_eval":				false,
+	"full_log_dir": "/home/cheng/Desktop/repos/bucket-tracking/test_output",
+	"early_stop_patience": 1,
+	"early_stop_min_delta": 1,
+	"learning_rate_decay_factor": 1,
+	"learning_rate_decay_patience": 1,
+	"learning_rate_decay_min_lr": 1,
+	"lstm_h5_data_path": ""
+    },
+
+    "valid": {
+        "valid_image_folder":   "/home/cheng/Desktop/data/optical/teeth/Test/image/",
+        "valid_annot_folder":   "/home/cheng/Desktop/data/optical/teeth/Test/labels/",
+        "valid_times":          1
+    }
+}

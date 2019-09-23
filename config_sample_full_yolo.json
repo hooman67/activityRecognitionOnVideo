@@ -1,0 +1,50 @@
+{
+    "model" : {
+        "backend":              "Full Yolo",
+        "input_size":           640,
+        "anchors":              [0.50,0.89, 0.51,1.08, 0.64,1.11, 0.74,0.72, 6.79,2.77, 7.39,1.68, 8.66,9.87, 10.41,6.27, 15.30,9.96],
+        "max_box_per_image":    20,        
+        "labels":               ["Tooth", "Toothline", "BucketBB", "MatInside", "WearArea"],
+        "activity_labels":      ["Swinging", "Dumping", "Background", "Digging", "Idle"],
+
+		"h5_sequence_length":	60,
+		"last_sequence_length": 30,
+		"stride":				3,
+		"detector_weights_path":"/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/yolo_v2_models/bucyrus_hydraulic/full_yolo_final.h5"
+    },
+
+    "train": {
+        "train_image_folder":   "/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/data/optical/teeth/hydraulic_bucyrus_p_h/Train_copy/image/",
+        "train_annot_folder":   "/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/data/optical/teeth/hydraulic_bucyrus_p_h/Train_copy/labels/",
+        "train_h5_folder":		"/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/data/optical/teeth_activity/hydraulic/h5s",
+        "train_times":          1,
+        "pretrained_weights":   "",
+        "batch_size":           16,
+		"num_samples_in_h5":	16,
+        "learning_rate":        1e-4,
+        "nb_epochs":            200,
+        "warmup_epochs":        2,
+
+        "object_scale":         5.0,
+        "no_object_scale":      1.0,
+        "coord_scale":          1.0,
+        "class_scale":          1.0,
+        "activity_loss_weight": 1.0,
+
+        "full_log_dir": "/home/cheng/Desktop/repos/bucket-tracking/test_output",
+        "early_stop_patience": 100,
+        "early_stop_min_delta": 0.01,
+        "learning_rate_decay_factor": 0.5,
+        "learning_rate_decay_patience": 20,
+        "learning_rate_decay_min_lr": 1e-6,
+
+        "saved_weights_name":   "/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/yolo_v2_models/full_yolo",
+        "debug":                false
+    },
+
+    "valid": {
+        "valid_image_folder":   "/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/data/optical/teeth/hydraulic_bucyrus_p_h/Test/all/image",
+        "valid_annot_folder":   "/media/sf_N_DRIVE/randd/MachineLearning/TeamMembers/Anuar/data/optical/teeth/hydraulic_bucyrus_p_h/Test/all/labels",
+        "valid_times":          1
+    }
+}

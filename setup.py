@@ -13,6 +13,6 @@ setup(
         "numpy==1.15.4",
         "opencv-python==3.4.5.20",
         "Pillow==5.4.1",
-        "tensorflow==1.12.0"
+        "tensorflow==1.15.2"
     ], #external packages as dependencies
 )

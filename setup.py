@@ -12,7 +12,7 @@ setup(
         "matplotlib==3.0.2",
         "numpy==1.15.4",
         "opencv-python==3.4.5.20",
-        "Pillow==5.4.1",
+        "Pillow==9.0.1",
         "tensorflow==1.12.0"
     ], #external packages as dependencies
 )

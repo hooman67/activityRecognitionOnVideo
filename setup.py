@@ -10,7 +10,7 @@ setup(
    install_requires=[
         "Keras==2.2.4",
         "matplotlib==3.0.2",
-        "numpy==1.15.4",
+        "numpy==1.22.0",
         "opencv-python==3.4.5.20",
         "Pillow==5.4.1",
         "tensorflow==1.12.0"
